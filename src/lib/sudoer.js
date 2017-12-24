@@ -158,9 +158,9 @@ class SudoerDarwin extends SudoerUnix {
             // Prompt password
             await self.prompt();
             cp = spawn(bin, ['-n', '-s', '-E', [command, ...args].join(' ')], options);
-            cp.on('error', async (err) => {
-                reject(err);
-            });
+            // cp.on('error', async (err) => {
+            //     reject(err);
+            // });
             self.cp = cp;
             resolve(cp);
         });
